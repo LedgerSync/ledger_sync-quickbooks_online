@@ -55,7 +55,7 @@ module LedgerSync
           body: (body.to_json unless body.nil?),
           headers: headers
         )
-        ret = Response.new_from_oauth_response(
+        ret = LedgerSync::Ledgers::Response.new_from_oauth_response(
           oauth_response: oauth_response,
           request: self
         )

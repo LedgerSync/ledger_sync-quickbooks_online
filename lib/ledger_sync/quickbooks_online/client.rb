@@ -78,7 +78,7 @@ module LedgerSync
       end
 
       def oauth_client
-        @oauth_client ||= OAuthClient.new(
+        OAuthClient.new(
           client_id: client_id,
           client_secret: client_secret
         )

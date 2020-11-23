@@ -1,191 +1,433 @@
 # frozen_string_literal: true
 
-# Define globally so it's only evaluated once.
-
-module LedgerSync
-  module Test
-    class QuickBooksOnlineRecord < Record
-      def id
-        hash.fetch('Id', nil)
-      end
-    end
-  end
-end
-
-QUICK_BOOKS_ONLINE_RECORD_COLLECTION = LedgerSync::Test::RecordCollection.new(
-  dir: File.join(LedgerSync::QuickBooksOnline.root, 'spec/support/records'),
-  record_class: LedgerSync::Test::QuickBooksOnlineRecord
-)
+require_relative 'record_collection'
 
 module QuickBooksOnlineHelpers # rubocop:disable Metrics/ModuleLength
-  def authorized_headers(override = {})
-    {
-      'Accept' => 'application/json',
-      'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-      'Content-Type' => 'application/json',
-      'User-Agent' => /.*/
-    }.merge(override)
-  end
+  def api_url(record:, ledger_id: nil)
+    resource_class = "LedgerSync::QuickBooksOnline::#{record.ledger_class}".constantize
+    url_resource = LedgerSync::QuickBooksOnline::Client.ledger_resource_type_for(
+      resource_class: resource_class
+    ).tr('_', '')
 
-  def api_record_url(args = {})
-    _record = args.fetch(:record)
-    id      = args.fetch(:id, nil)
-    params  = args.fetch(:params, {})
+    ret = "https://sandbox-quickbooks.api.intuit.com/v3/company/realm_id/#{url_resource}"
+    ret += '/' if url_resource == 'preferences' && !ret.end_with?('/')
 
-    resource_endpoint = quickbooks_online_client.class.ledger_resource_type_for(resource_class: resource.class).pluralize
-    ret = "https://api.quickbooks_online.com/#{resource_endpoint}"
-
-    if id.present?
+    if ledger_id
       ret += '/' unless ret.end_with?('/')
-      ret += id.to_s
-    end
-
-    if params.present?
-      uri = URI(ret)
-      uri.query = params.to_query
-      ret = uri.to_s
+      ret += ledger_id.to_s
     end
 
     ret
   end
 
-  def response_headers(overrides = {})
+  def headers
     {
-      'Content-Type' => 'application/json'
-    }.merge(overrides)
+      'Accept' => 'application/json',
+      'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+      'Authorization' => 'Bearer access_token',
+      'Content-Type' => 'application/json',
+      'User-Agent' => /Faraday v[0-9]+\.[0-9]+\.[0-9]+/
+    }
   end
 
-  def quickbooks_online_client
-    LedgerSync.ledgers.quickbooks_online.new_from_env
-  end
-
-  def quickbooks_online_env?
-    @quickbooks_online_env ||= ENV.key?('USE_DOTENV_ADAPTOR_SECRETS')
-  end
-
-  def quickbooks_online_records
-    @quickbooks_online_records ||= QUICK_BOOKS_ONLINE_RECORD_COLLECTION
-  end
-
-  def quickbooks_online_resource_type
-    record.to_s.gsub(/^quickbooks_online_/, '')
-  end
-
-  def stub_create_for_record
-    send("stub_#{quickbooks_online_resource_type}_create")
-  end
-
-  def stub_create_request(body:, url:)
+  def stub_create(request_body:, response_body:, url:)
     stub_request(:post, url)
       .with(
-        headers: authorized_headers
+        body: request_body,
+        headers: headers
       )
       .to_return(
         status: 200,
-        body: body.to_json
+        body: (response_body.is_a?(Hash) ? response_body.to_json : response_json)
       )
   end
 
-  def stub_delete_for_record
-    send("stub_#{quickbooks_online_resource_type}_delete")
-  end
-
-  def stub_delete_request(url:)
-    stub_request(:delete, url)
+  def stub_find(response_body:, url:)
+    stub_request(:get, url)
       .with(
-        headers: authorized_headers
+        headers: headers
       )
       .to_return(
-        status: 204,
-        body: '',
+        status: 200,
+        body: (response_body.is_a?(Hash) ? response_body.to_json : response_json)
+      )
+  end
+
+  def stub_search(response_body:, url:)
+    stub_request(:get, url)
+      .with(
+        headers: headers
+      )
+      .to_return(
+        status: 200,
+        body: (response_body.is_a?(Hash) ? response_body.to_json : response_json)
+      )
+  end
+
+  def stub_update(request_body:, response_body:, url:)
+    stub_request(:post, url)
+      .with(
+        body: request_body,
+        headers: headers
+      )
+      .to_return(
+        status: 200,
+        body: (response_body.is_a?(Hash) ? response_body.to_json : response_json)
+      )
+  end
+
+  Test::QuickBooksOnline::RecordCollection.new.all.each do |resource, record|
+    request_body_hash = "#{resource}_request_body_hash"
+    response_body_hash = "#{resource}_response_body_hash"
+    search_response_body_hash = "#{resource}_search_response_body_hash"
+    stub_create_method = "stub_#{resource}_create"
+    stub_find_method = "stub_#{resource}_find"
+    stub_delete_method = "stub_#{resource}_delete"
+    stub_update_method = "stub_#{resource}_update"
+    stub_search_method = "stub_#{resource}_search"
+
+    define_method(request_body_hash) do
+      record.try(:request_hash)
+    end
+
+    define_method(response_body_hash) do
+      {
+        record.try(:ledger_resource).to_s =>
+        record.try(:response_hash)
+
+      }
+    end
+
+    define_method(search_response_body_hash) do
+      {
+        'QueryResponse' => {
+          record.try(:ledger_resource).to_s => [
+            record.try(:response_hash)
+          ]
+        }
+      }
+    end
+
+    define_method(stub_create_method) do |request_body: nil, response_body: nil|
+      stub_create(
+        request_body: (request_body || send(request_body_hash)),
+        response_body: (response_body || send(response_body_hash)),
+        url: api_url(record: record)
+      )
+    end
+
+    define_method(stub_find_method) do |ledger_id: nil, response_body: nil|
+      stub_find(
+        response_body: (response_body || send(response_body_hash)),
+        url: api_url(
+          ledger_id: (ledger_id || record.try(:ledger_id)),
+          record: record
+        )
+      )
+    end
+
+    define_method(stub_delete_method) do |request_body: nil, response_body: nil|
+      # does nothing
+    end
+
+    define_method(stub_update_method) do |request_body: nil, response_body: nil|
+      stub_update(
+        request_body: (
+          request_body ||
+          record.try(:update_request_hash) ||
+          record.try(:response_hash) # This defaults to response body because FullUpdates are required
+        ),
+        response_body: (response_body || send(response_body_hash)),
+        url: api_url(record: record)
+      )
+    end
+
+    define_method(stub_search_method) do |response_body: nil, url: nil|
+      stub_search(
+        response_body: (response_body || send(search_response_body_hash)),
+        url: (url || record.try(:search_url))
+      )
+    end
+  end
+
+  # Ledger
+  def quickbooks_online_client
+    LedgerSync.ledgers.quickbooks_online.new(
+      access_token: 'access_token',
+      client_id: 'client_id',
+      client_secret: 'client_secret',
+      realm_id: 'realm_id',
+      refresh_token: 'refresh_token',
+      test: true
+    )
+  end
+
+  def basic_authorization_header
+    "Basic #{Base64.strict_encode64("#{client_id}:#{client_secret}")}"
+  end
+
+  def stub_client_refresh
+    stub_request(:post, 'https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer')
+      .with(
+        body: {
+          'client_id' => 'client_id',
+          'client_secret' => 'client_secret',
+          'grant_type' => 'refresh_token',
+          'refresh_token' => 'refresh_token'
+        },
+        headers: {
+          'Accept' => '*/*',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Content-Type' => 'application/x-www-form-urlencoded',
+          'User-Agent' => /Faraday v[0-9]+\.[0-9]+\.[0-9]+/
+        }
+      )
+      .to_return(
+        status: 200,
+        body: { 'token_type' => 'bearer',
+                'expires_in' => 3600,
+                'refresh_token' => 'NEW_REFRESH_TOKEN',
+                'x_refresh_token_expires_in' => 1_569_480_516,
+                'access_token' => 'NEW_ACCESS_TOKEN' }.to_json,
+        headers: {
+          'Content-Type' => 'application/json'
+        }
+      )
+  end
+
+  def stub_revoke_token
+    stub_request(
+      :post,
+      'https://developer.api.intuit.com/v2/oauth2/tokens/revoke'
+    ).with(
+      body: {
+        'token' => 'access_token'
+
+      }.to_json,
+      headers: {
+        'Accept' => 'application/json',
+        'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'Authorization' => basic_authorization_header,
+        'Content-Type' => 'application/json',
+        'User-Agent' => 'Ruby'
+
+      }
+    ).to_return(
+      status: 200,
+      body: '',
+      headers: {}
+    )
+  end
+
+  # Expense
+
+  def stub_create_expense_with_cutomer_entity
+    stub_request(:post, 'https://sandbox-quickbooks.api.intuit.com/v3/company/realm_id/purchase')
+      .with(
+        body: {
+          "Id": nil,
+          "CurrencyRef": {
+            "value": 'USD'
+          },
+          "PaymentType": 'Cash',
+          "TxnDate": '2019-09-01',
+          "PrivateNote": 'Memo',
+          "ExchangeRate": 1.0,
+          "EntityRef": {
+            "value": '123',
+            "type": 'Customer'
+          },
+          "DocNumber": 'Ref123',
+          "AccountRef": {
+            "value": '123'
+          },
+          "DepartmentRef": {
+            "value": '123'
+          },
+          "Line": [
+            {
+              "Id": nil,
+              "DetailType": 'AccountBasedExpenseLineDetail',
+              "AccountBasedExpenseLineDetail": {
+                "AccountRef": {
+                  "value": '123'
+                },
+                "ClassRef": {
+                  "value": '123'
+                }
+              },
+              "Amount": 123.45,
+              "Description": 'Sample Transaction'
+            },
+            {
+              "Id": nil,
+              "DetailType": 'AccountBasedExpenseLineDetail',
+              "AccountBasedExpenseLineDetail": {
+                "AccountRef": {
+                  "value": '123'
+                },
+                "ClassRef": {
+                  "value": '123'
+                }
+              },
+              "Amount": 123.45,
+              "Description": 'Sample Transaction'
+            }
+          ]
+        },
+        headers: {
+          'Accept' => 'application/json',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Authorization' => 'Bearer access_token',
+          'Content-Type' => 'application/json',
+          'User-Agent' => /Faraday v[0-9]+\.[0-9]+\.[0-9]+/
+        }
+      )
+      .to_return(
+        status: 200,
+        body: {
+          "Purchase": {
+            "AccountRef": {
+              "value": '123',
+              "name": 'Sample Account'
+            },
+            "PaymentType": 'Cash',
+            "EntityRef": {
+              "value": '123',
+              "name": 'Sample Vendor',
+              "type": 'Vendor'
+            },
+            "TotalAmt": 24_690.0,
+            "PurchaseEx": {
+              "any": [
+                {
+                  "name": '{http://schema.intuit.com/finance/v3}NameValue',
+                  "declaredType": 'com.intuit.schema.finance.v3.NameValue',
+                  "scope": 'javax.xml.bind.JAXBElement$GlobalScope',
+                  "value": {
+                    "Name": 'TxnType',
+                    "Value": '54'
+                  },
+                  "nil": false,
+                  "globalScope": true,
+                  "typeSubstituted": false
+                }
+              ]
+            },
+            "domain": 'QBO',
+            "sparse": false,
+            "Id": '123',
+            "SyncToken": '0',
+            "MetaData": {
+              "CreateTime": '2019-09-20T09:44:50-07:00',
+              "LastUpdatedTime": '2019-09-20T09:44:50-07:00'
+            },
+            "CustomField": [],
+            "DocNumber": 'Ref123',
+            "DepartmentRef": {
+              "value": '123',
+              "name": 'Sample Department'
+            },
+            "TxnDate": '2019-09-01',
+            "CurrencyRef": {
+              "value": 'USD'
+            },
+            "PrivateNote": 'Memo',
+            "Line": [
+              {
+                "Id": '1',
+                "Description": 'Sample Transaction',
+                "Amount": 123.45,
+                "DetailType": 'AccountBasedExpenseLineDetail',
+                "AccountBasedExpenseLineDetail": {
+                  "AccountRef": {
+                    "value": '123',
+                    "name": 'Sample Account'
+                  },
+                  "BillableStatus": 'NotBillable',
+                  "ClassRef": {
+                    "value": '123',
+                    "name": 'Sample Class'
+                  },
+                  "TaxCodeRef": {
+                    "value": 'NON'
+                  }
+                }
+              },
+              {
+                "Id": '2',
+                "Description": 'Sample Transaction',
+                "Amount": 123.45,
+                "DetailType": 'AccountBasedExpenseLineDetail',
+                "AccountBasedExpenseLineDetail": {
+                  "AccountRef": {
+                    "value": '123',
+                    "name": 'Sample Account'
+                  },
+                  "BillableStatus": 'NotBillable',
+                  "ClassRef": {
+                    "value": '123',
+                    "name": 'Sample Class'
+                  },
+                  "TaxCodeRef": {
+                    "value": 'NON'
+                  }
+                }
+              }
+            ]
+          },
+          "time": '2019-09-20T09:44:50.133-07:00'
+        }.to_json,
         headers: {}
       )
   end
 
-  def stub_find_for_record(params: {})
-    send("stub_#{quickbooks_online_resource_type}_find", params)
+  # Webhooks
+
+  def webhook
+    @webhook ||= LedgerSync::QuickBooksOnline::Webhook.new(
+      payload: webhook_hash
+    )
   end
 
-  def stub_find_request(response_body:, url:)
-    stub_request(:get, url)
-      .to_return(
-        status: 200,
-        body: (response_body.is_a?(Hash) ? response_body.to_json : response_body)
-      )
+  def webhook_hash
+    @webhook_hash ||= {
+      'eventNotifications' => [
+        webhook_notification_hash(realm_id: 'realm_1'),
+        webhook_notification_hash(realm_id: 'realm_2')
+      ]
+    }
   end
 
-  def stub_search_for_record
-    send("stub_#{quickbooks_online_resource_type}_search")
+  def webhook_event
+    @webhook_event ||= webhook.events.first
   end
 
-  def stub_update_for_record(params: {})
-    send("stub_#{quickbooks_online_resource_type}_update", params)
+  def webhook_event_hash(quickbooks_online_resource_type: 'Customer')
+    {
+      'name' => quickbooks_online_resource_type,
+      'id' => '123',
+      'operation' => 'Create',
+      'lastUpdated' => '2015-10-05T14:42:19-0700'
+    }
   end
 
-  def stub_update_request(args = {})
-    body = args.fetch(:body, '')
-    url = args.fetch(:url)
-
-    stub_request(:post, url)
-      .with(
-        headers: authorized_headers
-      )
-      .to_return(
-        status: 200,
-        body: body.to_json
-      )
+  def webhook_notification
+    @webhook_notification ||= webhook.notifications.first
   end
 
-  # Dynamically define helpers
-  QUICK_BOOKS_ONLINE_RECORD_COLLECTION.all.each do |record, opts|
-    record = record.gsub('/', '_')
-    url_method_name = "#{record}_url"
+  def webhook_notification_hash(entities: nil, realm_id: 'realm_1')
+    entities ||= [
+      webhook_event_hash(quickbooks_online_resource_type: 'Customer'),
+      webhook_event_hash(quickbooks_online_resource_type: 'Vendor')
+    ]
 
-    define_method(url_method_name) do |**keywords|
-      api_record_url(
-        **{
-          record: record
-        }.merge(keywords)
-      )
-    end
-
-    define_method("stub_#{record}_create") do
-      stub_create_request(
-        body: opts.hash,
-        url: send(url_method_name)
-      )
-    end
-
-    define_method("stub_#{record}_delete") do
-      stub_delete_request(
-        url: send(
-          url_method_name,
-          id: opts.id
-        )
-      )
-    end
-
-    define_method("stub_#{record}_find") do |params = {}|
-      stub_find_request(
-        response_body: opts.hash,
-        url: send(
-          url_method_name,
-          params: params,
-          id: opts.id
-        )
-      )
-    end
-
-    define_method("stub_#{record}_update") do |args = {}|
-      params = args.fetch(:params, {})
-      body = args.fetch(:body, opts.hash)
-      stub_update_request(
-        body: body,
-        url: send(
-          url_method_name,
-          params: params
-        )
-      )
-    end
+    {
+      'realmId' => realm_id,
+      'dataChangeEvent' =>
+       {
+         'entities' => entities
+       }
+    }
   end
 end
