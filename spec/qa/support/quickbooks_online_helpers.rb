@@ -12,7 +12,7 @@ module QA
     end
 
     def quickbooks_online_client
-      @quickbooks_online_client ||= client_class.new_from_env
+      @quickbooks_online_client ||= client_class.new_from_env(test: true)
     end
   end
 end
