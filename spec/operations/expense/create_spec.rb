@@ -41,7 +41,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::Expense::Operations::Create do
     )
   end
 
-  let(:line_item_1) do
+  let(:line_item1) do
     build(
       :quickbooks_online_expense_line,
       Amount: 12_345,
@@ -54,7 +54,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::Expense::Operations::Create do
     )
   end
 
-  let(:line_item_2) do
+  let(:line_item2) do
     build(
       :quickbooks_online_expense_line,
       Amount: 12_345,
@@ -85,8 +85,8 @@ RSpec.describe LedgerSync::QuickBooksOnline::Expense::Operations::Create do
       Department: department,
       Entity: entity,
       Line: [
-        line_item_1,
-        line_item_2
+        line_item1,
+        line_item2
       ]
     )
   end

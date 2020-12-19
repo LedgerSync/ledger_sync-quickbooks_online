@@ -30,7 +30,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::Bill::Operations::Update do
     build(:quickbooks_online_ledger_class, ledger_id: '123')
   end
 
-  let(:line_item_1) do
+  let(:line_item1) do
     build(
       :quickbooks_online_bill_line,
       Amount: 12_345,
@@ -43,7 +43,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::Bill::Operations::Update do
     )
   end
 
-  let(:line_item_2) do
+  let(:line_item2) do
     build(
       :quickbooks_online_bill_line,
       Amount: 12_345,
@@ -69,8 +69,8 @@ RSpec.describe LedgerSync::QuickBooksOnline::Bill::Operations::Update do
       TxnDate: Date.parse('2019-09-01'),
       DueDate: Date.parse('2019-09-01'),
       Line: [
-        line_item_1,
-        line_item_2
+        line_item1,
+        line_item2
       ]
     )
   end

@@ -2,5 +2,5 @@
 
 require 'spec_helper'
 
-RSpec.describe LedgerSync::QuickBooksOnline::Department::Deserializer do
-end
+# RSpec.describe LedgerSync::QuickBooksOnline::Department::Deserializer do
+# end

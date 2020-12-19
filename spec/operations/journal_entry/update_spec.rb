@@ -36,7 +36,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::JournalEntry::Operations::Update do
     )
   end
 
-  let(:line_item_1) do
+  let(:line_item1) do
     build(
       :quickbooks_online_journal_entry_line,
       ledger_id: nil,
@@ -52,7 +52,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::JournalEntry::Operations::Update do
     )
   end
 
-  let(:line_item_2) do
+  let(:line_item2) do
     build(
       :quickbooks_online_journal_entry_line,
       ledger_id: nil,
@@ -81,8 +81,8 @@ RSpec.describe LedgerSync::QuickBooksOnline::JournalEntry::Operations::Update do
         Name: 'United States Dollar'
       ),
       Line: [
-        line_item_1,
-        line_item_2
+        line_item1,
+        line_item2
       ]
     )
   end
