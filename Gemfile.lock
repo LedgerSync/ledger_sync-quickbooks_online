@@ -4,7 +4,6 @@ PATH
     ledger_sync-quickbooks_online (0.1.1)
       dotenv
       ledger_sync (~> 1.8.0)
-      nokogiri
       oauth2
 
 GEM

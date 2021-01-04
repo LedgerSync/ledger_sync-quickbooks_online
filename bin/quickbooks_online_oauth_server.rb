@@ -49,7 +49,7 @@ while (session = server.accept) # rubocop:disable Lint/UnreachableLoop
   puts request
 
   # 1
-  _method, full_path = request.split(' ')
+  _method, full_path = request.split
 
   # 2
   _path, query = full_path.split('?')
