@@ -33,7 +33,6 @@ module LedgerSync
 
       def merge_resources_for_full_update(args = {})
         hash            = args.fetch(:hash)
-        ledger_resource = args.fetch(:ledger_resource)
         resource        = args.fetch(:resource)
         merged_resource = resource.dup
 
