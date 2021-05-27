@@ -45,7 +45,7 @@ module LedgerSync
             resource: merged_resource
           )
 
-          resource_hash_from_ledger = Hash[resources_from_ledger.map { |e| [e.ledger_id, e] }]
+          resource_hash_from_ledger = resources_from_ledger.map { |e| [e.ledger_id, e] }.to_h
 
           # Using original resource since it is overwritten by keyword arg
           merged_value = resource.send(deserializer_attribute.resource_attribute_dot_parts.first).map do |referenced|
