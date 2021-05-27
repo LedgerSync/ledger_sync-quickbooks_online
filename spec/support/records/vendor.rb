@@ -21,27 +21,27 @@ module Test
             'CompanyName' => nil
           },
           update_request_hash: {
-            "Id": '123',
-            "DisplayName": 'Sample Vendor',
-            "GivenName": 'Sample',
-            "FamilyName": 'Vendor',
-            "PrimaryEmailAddr": {
-              "Address": 'test@example.com'
+            Id: '123',
+            DisplayName: 'Sample Vendor',
+            GivenName: 'Sample',
+            FamilyName: 'Vendor',
+            PrimaryEmailAddr: {
+              Address: 'test@example.com'
             },
-            "Balance": 0,
-            "Vendor1099": false,
-            "CurrencyRef": {
-              "value": 'USD'
+            Balance: 0,
+            Vendor1099: false,
+            CurrencyRef: {
+              value: 'USD'
             },
-            "domain": 'QBO',
-            "sparse": false,
-            "SyncToken": '0',
-            "MetaData": {
-              "CreateTime": '2019-09-12T09:03:28-07:00',
-              "LastUpdatedTime": '2019-09-12T09:03:28-07:00'
+            domain: 'QBO',
+            sparse: false,
+            SyncToken: '0',
+            MetaData: {
+              CreateTime: '2019-09-12T09:03:28-07:00',
+              LastUpdatedTime: '2019-09-12T09:03:28-07:00'
             },
-            "PrintOnCheckName": 'Sample Vendor',
-            "Active": true,
+            PrintOnCheckName: 'Sample Vendor',
+            Active: true,
             'PrimaryPhone' => nil,
             'MiddleName' => nil,
             'CompanyName' => nil
