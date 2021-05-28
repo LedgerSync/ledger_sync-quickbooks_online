@@ -19,10 +19,9 @@ module LedgerSync
           value = hash.fetch('Entity', nil)
 
           unless value.nil?
-            Client.ledger_resource_for(
-              type: value['type']
-            ).new(
-              ledger_id: value['value']
+            Customer.new(
+              ledger_id: value['value'],
+              name: value['name']
             )
           end
         end
