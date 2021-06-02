@@ -21,7 +21,7 @@ module LedgerSync
           unless value.nil?
             Customer.new(
               ledger_id: value['value'],
-              name: value['name']
+              DisplayName: value['name']
             )
           end
         end
