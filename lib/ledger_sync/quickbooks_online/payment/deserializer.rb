@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative '../account/deserializer'
 require_relative '../reference/deserializer'
 require_relative '../payment_line/deserializer'
 
