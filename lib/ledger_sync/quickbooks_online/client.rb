@@ -34,6 +34,8 @@ module LedgerSync
         client_secret:,
         realm_id:,
         refresh_token:,
+        expires_at:,
+        refresh_token_expires_at:,
         test: false,
         update_dotenv: true
       )
@@ -42,6 +44,8 @@ module LedgerSync
         @client_secret = client_secret
         @realm_id = realm_id
         @refresh_token = refresh_token
+        @expires_at = expires_at
+        @refresh_token_expires_at = refresh_token_expires_at
         @test = test
         @update_dotenv = update_dotenv
 

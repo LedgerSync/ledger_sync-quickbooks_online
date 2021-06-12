@@ -32,8 +32,10 @@ module LedgerSync
 
           def match?
             code == 3200 ||
-              message.include?('authenticationfailed') ||
-              message.include?('errorcode=003200')
+              code == '3200' ||
+              message.downcase.include?('statuscode=401') ||
+              message.downcase.include?('authenticationfailed') ||
+              message.downcase.include?('errorcode=003200')
           end
         end
 
@@ -48,8 +50,9 @@ module LedgerSync
 
           def match?
             code == 3100 ||
-              message.include?('authorizationfailed') ||
-              message.include?('errorcode=003100')
+              code == '3100' ||
+              message.downcase.include?('authorizationfailed') ||
+              message.downcase.include?('errorcode=003100')
           end
         end
 
