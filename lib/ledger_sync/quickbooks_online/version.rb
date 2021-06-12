@@ -3,7 +3,7 @@
 # :nocov:
 module LedgerSync
   module QuickBooksOnline
-    VERSION = '0.2.6'
+    VERSION = '0.3.0'
 
     def self.version(args = {})
       pre = args.fetch(:pre, false)
