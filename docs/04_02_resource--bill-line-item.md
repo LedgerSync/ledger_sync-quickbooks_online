@@ -1,4 +1,4 @@
-### LedgerSync::Ledgers::QuickBooksOnline::BillLineItem
+## LedgerSync::Ledgers::QuickBooksOnline::BillLineItem
 
 ### Attributes
 
