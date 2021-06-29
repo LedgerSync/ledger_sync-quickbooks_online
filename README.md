@@ -14,7 +14,7 @@
 [Click here](https://join.slack.com/t/ledger-sync/shared_invite/zt-e5nbl8qc-eOA~5k7bg3p16_l3J7OS~Q) to join our public Slack group.
 
 **Table of Content**
-- [LedgerSync::QuickBooksOnline](#ledgersync::quickbooksonline)	- [Join the Conversation](#joinTheConversation)	- [Documentation](#documentation)	- [License](#license)	- [Maintainers](#maintainers)- [Getting Started](#gettingStarted)	- [Installation](#installation)		- [Gemfile](#gemfile)		- [Directly](#directly)	- [OAuth](#oauth)		- [Retrieve Access Token](#retrieveAccessToken)- [Errors](#errors)- [Resources](#resources)	- [LedgerSync::Ledgers::QuickBooksOnline::Account](#ledgersync::ledgers::quickbooksonline::account)		- [Attributes](#attributes01)		- [Operations](#operations01)			- [LedgerSync::Ledgers::QuickBooksOnline::Account::Operations::Find](#ledgersync::ledgers::quickbooksonline::account::operations::find)				- [Resource Validations](#resourceValidations01)			- [LedgerSync::Ledgers::QuickBooksOnline::Account::Operations::Create](#ledgersync::ledgers::quickbooksonline::account::operations::create)				- [Resource Validations](#resourceValidations01)			- [LedgerSync::Ledgers::QuickBooksOnline::Account::Operations::Update](#ledgersync::ledgers::quickbooksonline::account::operations::update)				- [Resource Validations](#resourceValidations02)	- [LedgerSync::Ledgers::QuickBooksOnline::Bill](#ledgersync::ledgers::quickbooksonline::bill)		- [Attributes](#attributes01)		- [Operations](#operations01)			- [LedgerSync::Ledgers::QuickBooksOnline::Bill::Operations::Update](#ledgersync::ledgers::quickbooksonline::bill::operations::update)				- [Resource Validations](#resourceValidations03)			- [LedgerSync::Ledgers::QuickBooksOnline::Bill::Operations::Create](#ledgersync::ledgers::quickbooksonline::bill::operations::create)				- [Resource Validations](#resourceValidations04)			- [LedgerSync::Ledgers::QuickBooksOnline::Bill::Operations::Find](#ledgersync::ledgers::quickbooksonline::bill::operations::find)				- [Resource Validations](#resourceValidations05)	- [LedgerSync::Ledgers::QuickBooksOnline::BillLineItem](#ledgersync::ledgers::quickbooksonline::billlineitem)		- [Attributes](#attributes02)		- [Operations](#operations02)	- [LedgerSync::Ledgers::QuickBooksOnline::BillPayment](#ledgersync::ledgers::quickbooksonline::billpayment)		- [Attributes](#attributes03)		- [Operations](#operations03)			- [LedgerSync::Ledgers::QuickBooksOnline::BillPayment::Operations::Find](#ledgersync::ledgers::quickbooksonline::billpayment::operations::find)				- [Resource Validations](#resourceValidations06)			- [LedgerSync::Ledgers::QuickBooksOnline::BillPayment::Operations::Create](#ledgersync::ledgers::quickbooksonline::billpayment::operations::create)				- [Resource Validations](#resourceValidations07)			- [LedgerSync::Ledgers::QuickBooksOnline::BillPayment::Operations::Update](#ledgersync::ledgers::quickbooksonline::billpayment::operations::update)				- [Resource Validations](#resourceValidations0801)	- [LedgerSync::Ledgers::QuickBooksOnline::Currency](#ledgersync::ledgers::quickbooksonline::currency)		- [Attributes](#attributes04)		- [Operations](#operations04)	- [LedgerSync::Ledgers::QuickBooksOnline::BillPaymentLineItem](#ledgersync::ledgers::quickbooksonline::billpaymentlineitem)		- [Attributes](#attributes05)		- [Operations](#operations05)	- [LedgerSync::Ledgers::QuickBooksOnline::Customer](#ledgersync::ledgers::quickbooksonline::customer)		- [Attributes](#attributes06)		- [Operations](#operations06)			- [LedgerSync::Ledgers::QuickBooksOnline::Customer::Operations::Find](#ledgersync::ledgers::quickbooksonline::customer::operations::find)				- [Resource Validations](#resourceValidations0801)			- [LedgerSync::Ledgers::QuickBooksOnline::Customer::Operations::Create](#ledgersync::ledgers::quickbooksonline::customer::operations::create)				- [Resource Validations](#resourceValidations0802)			- [LedgerSync::Ledgers::QuickBooksOnline::Customer::Operations::Update](#ledgersync::ledgers::quickbooksonline::customer::operations::update)				- [Resource Validations](#resourceValidations0803)		- [LedgerSync::Ledgers::QuickBooksOnline::Department](#ledgersync::ledgers::quickbooksonline::department)		- [Attributes](#attributes07)		- [Operations](#operations07)			- [LedgerSync::Ledgers::QuickBooksOnline::Department::Operations::Find](#ledgersync::ledgers::quickbooksonline::department::operations::find)				- [Resource Validations](#resourceValidations0804)			- [LedgerSync::Ledgers::QuickBooksOnline::Department::Operations::Create](#ledgersync::ledgers::quickbooksonline::department::operations::create)				- [Resource Validations](#resourceValidations0805)			- [LedgerSync::Ledgers::QuickBooksOnline::Department::Operations::Update](#ledgersync::ledgers::quickbooksonline::department::operations::update)				- [Resource Validations](#resourceValidations0806)	- [LedgerSync::Ledgers::QuickBooksOnline::Deposit](#ledgersync::ledgers::quickbooksonline::deposit)		- [Attributes](#attributes0801)		- [Operations](#operations0801)			- [LedgerSync::Ledgers::QuickBooksOnline::Deposit::Operations::Update](#ledgersync::ledgers::quickbooksonline::deposit::operations::update)				- [Resource Validations](#resourceValidations0807)			- [LedgerSync::Ledgers::QuickBooksOnline::Deposit::Operations::Create](#ledgersync::ledgers::quickbooksonline::deposit::operations::create)				- [Resource Validations](#resourceValidations080801)			- [LedgerSync::Ledgers::QuickBooksOnline::Deposit::Operations::Find](#ledgersync::ledgers::quickbooksonline::deposit::operations::find)				- [Resource Validations](#resourceValidations080801)	- [LedgerSync::Ledgers::QuickBooksOnline::DepositLineItem](#ledgersync::ledgers::quickbooksonline::depositlineitem)		- [Attributes](#attributes0801)		- [Operations](#operations0801)	- [LedgerSync::Ledgers::QuickBooksOnline::Expense](#ledgersync::ledgers::quickbooksonline::expense)		- [Attributes](#attributes0802)		- [Operations](#operations0802)			- [LedgerSync::Ledgers::QuickBooksOnline::Expense::Operations::Update](#ledgersync::ledgers::quickbooksonline::expense::operations::update)				- [Resource Validations](#resourceValidations080802)			- [LedgerSync::Ledgers::QuickBooksOnline::Expense::Operations::Find](#ledgersync::ledgers::quickbooksonline::expense::operations::find)				- [Resource Validations](#resourceValidations080803)			- [LedgerSync::Ledgers::QuickBooksOnline::Expense::Operations::Create](#ledgersync::ledgers::quickbooksonline::expense::operations::create)				- [Resource Validations](#resourceValidations080804)	- [LedgerSync::Ledgers::QuickBooksOnline::ExpenseLineItem](#ledgersync::ledgers::quickbooksonline::expenselineitem)		- [Attributes](#attributes0803)		- [Operations](#operations0803)	- [LedgerSync::Ledgers::QuickBooksOnline::Invoice](#ledgersync::ledgers::quickbooksonline::invoice)		- [Attributes](#attributes0804)		- [Operations](#operations0804)			- [LedgerSync::Ledgers::QuickBooksOnline::Invoice::Operations::Find](#ledgersync::ledgers::quickbooksonline::invoice::operations::find)				- [Resource Validations](#resourceValidations080805)			- [LedgerSync::Ledgers::QuickBooksOnline::Invoice::Operations::Create](#ledgersync::ledgers::quickbooksonline::invoice::operations::create)				- [Resource Validations](#resourceValidations080806)			- [LedgerSync::Ledgers::QuickBooksOnline::Invoice::Operations::Update](#ledgersync::ledgers::quickbooksonline::invoice::operations::update)				- [Resource Validations](#resourceValidations080807)	- [LedgerSync::Ledgers::QuickBooksOnline::InvoiceSalesLineItem](#ledgersync::ledgers::quickbooksonline::invoicesaleslineitem)		- [Attributes](#attributes0805)		- [Operations](#operations0805)		- [LedgerSync::Ledgers::QuickBooksOnline::Item](#ledgersync::ledgers::quickbooksonline::item)		- [Attributes](#attributes0806)		- [Operations](#operations0806)	- [LedgerSync::Ledgers::QuickBooksOnline::JournalEntry](#ledgersync::ledgers::quickbooksonline::journalentry)		- [Attributes](#attributes0807)		- [Operations](#operations0807)			- [LedgerSync::Ledgers::QuickBooksOnline::JournalEntry::Operations::Update](#ledgersync::ledgers::quickbooksonline::journalentry::operations::update)				- [Resource Validations](#resourceValidations08080801)			- [LedgerSync::Ledgers::QuickBooksOnline::JournalEntry::Operations::Find](#ledgersync::ledgers::quickbooksonline::journalentry::operations::find)				- [Resource Validations](#resourceValidations08080801)			- [LedgerSync::Ledgers::QuickBooksOnline::JournalEntry::Operations::Create](#ledgersync::ledgers::quickbooksonline::journalentry::operations::create)				- [Resource Validations](#resourceValidations08080802)	- [LedgerSync::Ledgers::QuickBooksOnline::JournalEntryLineItem](#ledgersync::ledgers::quickbooksonline::journalentrylineitem)		- [Attributes](#attributes080801)		- [Operations](#operations080801)	- [LedgerSync::Ledgers::QuickBooksOnline::LedgerClass](#ledgersync::ledgers::quickbooksonline::ledgerclass)		- [Attributes](#attributes080801)		- [Operations](#operations080801)			- [LedgerSync::Ledgers::QuickBooksOnline::LedgerClass::Operations::Create](#ledgersync::ledgers::quickbooksonline::ledgerclass::operations::create)				- [Resource Validations](#resourceValidations08080803)			- [LedgerSync::Ledgers::QuickBooksOnline::LedgerClass::Operations::Find](#ledgersync::ledgers::quickbooksonline::ledgerclass::operations::find)				- [Resource Validations](#resourceValidations08080804)			- [LedgerSync::Ledgers::QuickBooksOnline::LedgerClass::Operations::Update](#ledgersync::ledgers::quickbooksonline::ledgerclass::operations::update)				- [Resource Validations](#resourceValidations08080805)	- [LedgerSync::Ledgers::QuickBooksOnline::Payment](#ledgersync::ledgers::quickbooksonline::payment)		- [Attributes](#attributes080802)		- [Operations](#operations080802)			- [LedgerSync::Ledgers::QuickBooksOnline::Payment::Operations::Find](#ledgersync::ledgers::quickbooksonline::payment::operations::find)				- [Resource Validations](#resourceValidations08080806)			- [LedgerSync::Ledgers::QuickBooksOnline::Payment::Operations::Create](#ledgersync::ledgers::quickbooksonline::payment::operations::create)				- [Resource Validations](#resourceValidations08080807)			- [LedgerSync::Ledgers::QuickBooksOnline::Payment::Operations::Update](#ledgersync::ledgers::quickbooksonline::payment::operations::update)				- [Resource Validations](#resourceValidations0808080801)	- [LedgerSync::Ledgers::QuickBooksOnline::PaymentLineItem](#ledgersync::ledgers::quickbooksonline::paymentlineitem)		- [Attributes](#attributes080803)		- [Operations](#operations080803)	- [LedgerSync::Ledgers::QuickBooksOnline::Preferences](#ledgersync::ledgers::quickbooksonline::preferences)		- [Attributes](#attributes080804)		- [Operations](#operations080804)			- [LedgerSync::Ledgers::QuickBooksOnline::Preferences::Operations::Find](#ledgersync::ledgers::quickbooksonline::preferences::operations::find)				- [Resource Validations](#resourceValidations0808080801)		- [LedgerSync::Ledgers::QuickBooksOnline::PrimaryEmailAddr](#ledgersync::ledgers::quickbooksonline::primaryemailaddr)		- [Attributes](#attributes080805)		- [Operations](#operations080805)		- [LedgerSync::Ledgers::QuickBooksOnline::PrimaryPhone](#ledgersync::ledgers::quickbooksonline::primaryphone)		- [Attributes](#attributes080806)		- [Operations](#operations080806)	- [LedgerSync::Ledgers::QuickBooksOnline::Resource](#ledgersync::ledgers::quickbooksonline::resource)		- [Attributes](#attributes080807)		- [Operations](#operations080807)	- [LedgerSync::Ledgers::QuickBooksOnline::Subsidiary](#ledgersync::ledgers::quickbooksonline::subsidiary)		- [Attributes](#attributes08080801)		- [Operations](#operations08080801)	- [LedgerSync::Ledgers::QuickBooksOnline::Transfer](#ledgersync::ledgers::quickbooksonline::transfer)		- [Attributes](#attributes08080801)		- [Operations](#operations08080801)			- [LedgerSync::Ledgers::QuickBooksOnline::Transfer::Operations::Find](#ledgersync::ledgers::quickbooksonline::transfer::operations::find)				- [Resource Validations](#resourceValidations0808080802)			- [LedgerSync::Ledgers::QuickBooksOnline::Transfer::Operations::Create](#ledgersync::ledgers::quickbooksonline::transfer::operations::create)				- [Resource Validations](#resourceValidations0808080803)			- [LedgerSync::Ledgers::QuickBooksOnline::Transfer::Operations::Update](#ledgersync::ledgers::quickbooksonline::transfer::operations::update)				- [Resource Validations](#resourceValidations0808080804)	- [LedgerSync::Ledgers::QuickBooksOnline::Vendor](#ledgersync::ledgers::quickbooksonline::vendor)		- [Attributes](#attributes08080802)		- [Operations](#operations08080802)			- [LedgerSync::Ledgers::QuickBooksOnline::Vendor::Operations::Create](#ledgersync::ledgers::quickbooksonline::vendor::operations::create)				- [Resource Validations](#resourceValidations0808080805)			- [LedgerSync::Ledgers::QuickBooksOnline::Vendor::Operations::Update](#ledgersync::ledgers::quickbooksonline::vendor::operations::update)				- [Resource Validations](#resourceValidations0808080806)			- [LedgerSync::Ledgers::QuickBooksOnline::Vendor::Operations::Find](#ledgersync::ledgers::quickbooksonline::vendor::operations::find)				- [Resource Validations](#resourceValidations0808080807)
+- [LedgerSync::QuickBooksOnline](#ledgersync::quickbooksonline)	- [Join the Conversation](#joinTheConversation)	- [Documentation](#documentation)	- [License](#license)	- [Maintainers](#maintainers)- [Getting Started](#gettingStarted)	- [Installation](#installation)		- [Gemfile](#gemfile)		- [Directly](#directly)	- [OAuth](#oauth)		- [Retrieve Access Token](#retrieveAccessToken)- [Errors](#errors)- [Resources](#resources)
 
 
 <a name="documentation" />
@@ -142,12 +142,29 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 
 # Resources
 
+> To see all the available attributes / methods of a resource you can check out the `resource_attributes` method.
+> ```ruby
+>    LedgerSync::QuickBooksOnline::Account.resource_attributes
+>    # <LedgerSync::ResourceAttributeSet:0x00005618d06fb050 @attributes={:external_id=>#<LedgerSync::ResourceAttribute:0x00005618cfcda9b8 @name=:external_id, @resource_class=LedgerSync::Resource,
+>    # @type=#<LedgerSync::Type::ID:0x00005618cfcda940 @precision=nil, @scale=nil, @limit=nil>, @value=nil>, :ledger_id=>#<LedgerSync::ResourceAttribute:0x00005618cfc95188 @name=:ledger_id, @resource_class=LedgerSync::Resource, 
+>    # @type=#<LedgerSync::Type::ID:0x00005618cfc95110 @precision=nil, @scale=nil, @limit=nil>, @value=nil>, :Name=>#<LedgerSync::ResourceAttribute:0x00005618d0ad3470 @name=:Name, @resource_class=LedgerSync::QuickBooksOnline::Account, 
+>    # @type=#<LedgerSync::Type::String:0x00005618d0ad3448 @true="t", @false="f", @precision=nil, @scale=nil, @limit=nil>, @value=nil>, :Classification=>#<LedgerSync::ResourceAttribute:0x00005618d0ad1148 @name=:Classification, 
+>    # @resource_class=LedgerSync::QuickBooksOnline::Account, @type=#<LedgerSync::Type::String:0x00005618d0ad1120 @true="t", @false="f", @precision=nil, @scale=nil, @limit=nil>, @value=nil>, :AccountType=>#<LedgerSync::ResourceAttribute:0x00005618d073e0d0 @name=:AccountType, 
+>    # @resource_class=LedgerSync::QuickBooksOnline::Account, @type=#<LedgerSync::Type::StringFromSet:0x00005618d073e350 @values=["bank", "other_current_assets", "fixed_asset", "other_asset", "accounts_receivable", "equity", "expense", "other_expense", "cost_of_goods_sold", 
+>    # "accounts_payable", "credit_card", "long_term_liability", "other_current_liability", "income", "other_income"], @true="t", @false="f", @precision=nil, @scale=nil, @limit=nil>, @value=nil>, :AccountSubType=>#<LedgerSync::ResourceAttribute:0x00005618d0ae2cb8 @name=:AccountSubType, 
+>    # @resource_class=LedgerSync::QuickBooksOnline::Account, @type=#<LedgerSync::Type::String:0x00005618d0ae2c90 @true="t", @false="f", @precision=nil, @scale=nil, @limit=nil>, @value=nil>, :AcctNum=>#<LedgerSync::ResourceAttribute:0x00005618d0ae07d8 @name=:AcctNum, 
+>    # @resource_class=LedgerSync::QuickBooksOnline::Account, @type=#<LedgerSync::Type::String:0x00005618d0ae07b0 @true="t", @false="f", @precision=nil, @scale=nil, @limit=nil>, @value=nil>, :Description=>#<LedgerSync::ResourceAttribute:0x00005618d0af3478 @name=:Description, 
+>    # @resource_class=LedgerSync::QuickBooksOnline::Account, @type=#<LedgerSync::Type::String:0x00005618d0af3450 @true="t", @false="f", @precision=nil, @scale=nil, @limit=nil>, @value=nil>, :Active=>#<LedgerSync::ResourceAttribute:0x00005618d0af0f98 @name=:Active, 
+>    # @resource_class=LedgerSync::QuickBooksOnline::Account, @type=#<LedgerSync::Type::Boolean:0x00005618d0af0f70 @precision=nil, @scale=nil, @limit=nil>, @value=nil>, :Currency=>#<LedgerSync::ResourceAttribute::Reference::One:0x00005618d0aff868 @name=:Currency, 
+>    # @resource_class=LedgerSync::QuickBooksOnline::Account, @type=#<LedgerSync::Type::ReferenceOne:0x00005618d0aff778 @resource_class=LedgerSync::QuickBooksOnline::Currency, @precision=nil, @scale=nil, @limit=nil>, @value=nil>}, 
+>    # @references=[#<LedgerSync::ResourceAttribute::Reference::One:0x00005618d0aff868 @name=:Currency, @resource_class=LedgerSync::QuickBooksOnline::Account, @type=#<LedgerSync::Type::ReferenceOne:0x00005618d0aff778 @resource_class=LedgerSync::QuickBooksOnline::Currency, 
+>    # @precision=nil, @scale=nil, @limit=nil>, @value=nil>], @references_one=[#<LedgerSync::ResourceAttribute::Reference::One:0x00005618d0aff868 @name=:Currency, @resource_class=LedgerSync::QuickBooksOnline::Account, @type=#<LedgerSync::Type::ReferenceOne:0x00005618d0aff778 
+>    # @resource_class=LedgerSync::QuickBooksOnline::Currency, @precision=nil, @scale=nil, @limit=nil>, @value=nil>], @references_many=[], @resource=LedgerSync::QuickBooksOnline::Account>
+> #
+> ```
 
-<a name="ledgersync::ledgers::quickbooksonline::account" />
 
-## LedgerSync::Ledgers::QuickBooksOnline::Account
-
-<a name="attributes" />
+## LedgerSync::QuickBooksOnline::Account
 
 ### Attributes
 
@@ -165,48 +182,9 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | currency | LedgerSync::Type::ReferenceOne |
 
 
-<a name="operations" />
-
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::account::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Account::Operations::Find
-
-<a name="resourceValidations" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::account::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Account::Operations::Create
-
-<a name="resourceValidations01" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::account::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Account::Operations::Update
-
-<a name="resourceValidations02" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
 
 
-
-<a name="ledgersync::ledgers::quickbooksonline::bill" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Bill
-
-<a name="attributes01" />
+## LedgerSync::QuickBooksOnline::Bill
 
 ### Attributes
 
@@ -225,48 +203,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | line_items | LedgerSync::Type::ReferenceMany |
 
 
-<a name="operations01" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::bill::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Bill::Operations::Update
-
-<a name="resourceValidations03" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::bill::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Bill::Operations::Create
-
-<a name="resourceValidations04" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::bill::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Bill::Operations::Find
-
-<a name="resourceValidations05" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::billlineitem" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::BillLineItem
-
-<a name="attributes02" />
+## LedgerSync::QuickBooksOnline::BillLineItem
 
 ### Attributes
 
@@ -280,18 +218,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | description | LedgerSync::Type::String |
 
 
-<a name="operations02" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::billpayment" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::BillPayment
-
-<a name="attributes03" />
+## LedgerSync::QuickBooksOnline::BillPayment
 
 ### Attributes
 
@@ -314,48 +242,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | line_items | LedgerSync::Type::ReferenceMany |
 
 
-<a name="operations03" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::billpayment::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::BillPayment::Operations::Find
-
-<a name="resourceValidations06" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::billpayment::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::BillPayment::Operations::Create
-
-<a name="resourceValidations07" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::billpayment::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::BillPayment::Operations::Update
-
-<a name="resourceValidations08" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::currency" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Currency
-
-<a name="attributes04" />
+## LedgerSync::QuickBooksOnline::Currency
 
 ### Attributes
 
@@ -368,18 +256,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | symbol | LedgerSync::Type::String |
 
 
-<a name="operations04" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::billpaymentlineitem" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::BillPaymentLineItem
-
-<a name="attributes05" />
+## LedgerSync::QuickBooksOnline::BillPaymentLineItem
 
 ### Attributes
 
@@ -391,18 +269,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | ledger_transactions | LedgerSync::Type::ReferenceMany |
 
 
-<a name="operations05" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::customer" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Customer
-
-<a name="attributes06" />
+## LedgerSync::QuickBooksOnline::Customer
 
 ### Attributes
 
@@ -416,48 +284,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | subsidiary | LedgerSync::Type::ReferenceOne |
 
 
-<a name="operations06" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::customer::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Customer::Operations::Find
-
-<a name="resourceValidations0801" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::customer::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Customer::Operations::Create
-
-<a name="resourceValidations0802" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::customer::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Customer::Operations::Update
-
-<a name="resourceValidations0803" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::department" />
-
-### LedgerSync::Ledgers::QuickBooksOnline::Department
-
-<a name="attributes07" />
+### LedgerSync::QuickBooksOnline::Department
 
 ### Attributes
 
@@ -472,48 +300,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | parent | LedgerSync::Type::ReferenceOne |
 
 
-<a name="operations07" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::department::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Department::Operations::Find
-
-<a name="resourceValidations0804" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::department::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Department::Operations::Create
-
-<a name="resourceValidations0805" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::department::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Department::Operations::Update
-
-<a name="resourceValidations0806" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::deposit" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Deposit
-
-<a name="attributes08" />
+## LedgerSync::QuickBooksOnline::Deposit
 
 ### Attributes
 
@@ -530,48 +318,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | line_items | LedgerSync::Type::ReferenceMany |
 
 
-<a name="operations08" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::deposit::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Deposit::Operations::Update
-
-<a name="resourceValidations0807" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::deposit::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Deposit::Operations::Create
-
-<a name="resourceValidations0808" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::deposit::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Deposit::Operations::Find
-
-<a name="resourceValidations080801" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::depositlineitem" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::DepositLineItem
-
-<a name="attributes0801" />
+## LedgerSync::QuickBooksOnline::DepositLineItem
 
 ### Attributes
 
@@ -586,18 +334,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | entity | LedgerSync::Type::ReferenceOne |
 
 
-<a name="operations0801" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::expense" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Expense
-
-<a name="attributes0802" />
+## LedgerSync::QuickBooksOnline::Expense
 
 ### Attributes
 
@@ -617,48 +355,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | line_items | LedgerSync::Type::ReferenceMany |
 
 
-<a name="operations0802" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::expense::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Expense::Operations::Update
-
-<a name="resourceValidations080802" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::expense::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Expense::Operations::Find
-
-<a name="resourceValidations080803" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::expense::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Expense::Operations::Create
-
-<a name="resourceValidations080804" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::expenselineitem" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::ExpenseLineItem
-
-<a name="attributes0803" />
+## LedgerSync::QuickBooksOnline::ExpenseLineItem
 
 ### Attributes
 
@@ -672,18 +370,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | description | LedgerSync::Type::String |
 
 
-<a name="operations0803" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::invoice" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Invoice
-
-<a name="attributes0804" />
+## LedgerSync::QuickBooksOnline::Invoice
 
 ### Attributes
 
@@ -700,48 +388,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | line_items | LedgerSync::Type::ReferenceMany |
 
 
-<a name="operations0804" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::invoice::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Invoice::Operations::Find
-
-<a name="resourceValidations080805" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::invoice::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Invoice::Operations::Create
-
-<a name="resourceValidations080806" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::invoice::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Invoice::Operations::Update
-
-<a name="resourceValidations080807" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::invoicesaleslineitem" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::InvoiceSalesLineItem
-
-<a name="attributes0805" />
+## LedgerSync::QuickBooksOnline::InvoiceSalesLineItem
 
 ### Attributes
 
@@ -755,18 +403,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | description | LedgerSync::Type::String |
 
 
-<a name="operations0805" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::item" />
-
-### LedgerSync::Ledgers::QuickBooksOnline::Item
-
-<a name="attributes0806" />
+### LedgerSync::QuickBooksOnline::Item
 
 ### Attributes
 
@@ -777,18 +415,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | name | LedgerSync::Type::String |
 
 
-<a name="operations0806" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::journalentry" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::JournalEntry
-
-<a name="attributes0807" />
+## LedgerSync::QuickBooksOnline::JournalEntry
 
 ### Attributes
 
@@ -803,48 +431,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | line_items | LedgerSync::Type::ReferenceMany |
 
 
-<a name="operations0807" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::journalentry::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::JournalEntry::Operations::Update
-
-<a name="resourceValidations080808" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::journalentry::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::JournalEntry::Operations::Find
-
-<a name="resourceValidations08080801" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::journalentry::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::JournalEntry::Operations::Create
-
-<a name="resourceValidations08080802" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::journalentrylineitem" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::JournalEntryLineItem
-
-<a name="attributes0808" />
+## LedgerSync::QuickBooksOnline::JournalEntryLineItem
 
 ### Attributes
 
@@ -860,18 +448,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | entry_type | LedgerSync::Type::StringFromSet |
 
 
-<a name="operations0808" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::ledgerclass" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::LedgerClass
-
-<a name="attributes080801" />
+## LedgerSync::QuickBooksOnline::LedgerClass
 
 ### Attributes
 
@@ -886,48 +464,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | parent | LedgerSync::Type::ReferenceOne |
 
 
-<a name="operations080801" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::ledgerclass::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::LedgerClass::Operations::Create
-
-<a name="resourceValidations08080803" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::ledgerclass::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::LedgerClass::Operations::Find
-
-<a name="resourceValidations08080804" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::ledgerclass::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::LedgerClass::Operations::Update
-
-<a name="resourceValidations08080805" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::payment" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Payment
-
-<a name="attributes080802" />
+## LedgerSync::QuickBooksOnline::Payment
 
 ### Attributes
 
@@ -947,48 +485,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | line_items | LedgerSync::Type::ReferenceMany |
 
 
-<a name="operations080802" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::payment::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Payment::Operations::Find
-
-<a name="resourceValidations08080806" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::payment::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Payment::Operations::Create
-
-<a name="resourceValidations08080807" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::payment::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Payment::Operations::Update
-
-<a name="resourceValidations08080808" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::paymentlineitem" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::PaymentLineItem
-
-<a name="attributes080803" />
+## LedgerSync::QuickBooksOnline::PaymentLineItem
 
 ### Attributes
 
@@ -1000,18 +498,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | ledger_transactions | LedgerSync::Type::ReferenceMany |
 
 
-<a name="operations080803" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::preferences" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Preferences
-
-<a name="attributes080804" />
+## LedgerSync::QuickBooksOnline::Preferences
 
 ### Attributes
 
@@ -1031,28 +519,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | other | LedgerSync::Type::Hash |
 
 
-<a name="operations080804" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::preferences::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Preferences::Operations::Find
-
-<a name="resourceValidations0808080801" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::primaryemailaddr" />
-
-### LedgerSync::Ledgers::QuickBooksOnline::PrimaryEmailAddr
-
-<a name="attributes080805" />
+### LedgerSync::QuickBooksOnline::PrimaryEmailAddr
 
 ### Attributes
 
@@ -1063,18 +531,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | Address | LedgerSync::Type::String |
 
 
-<a name="operations080805" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::primaryphone" />
-
-### LedgerSync::Ledgers::QuickBooksOnline::PrimaryPhone
-
-<a name="attributes080806" />
+### LedgerSync::QuickBooksOnline::PrimaryPhone
 
 ### Attributes
 
@@ -1085,18 +543,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | FreeFormNumber | LedgerSync::Type::String |
 
 
-<a name="operations080806" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::resource" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Resource
-
-<a name="attributes080807" />
+## LedgerSync::QuickBooksOnline::Resource
 
 ### Attributes
 
@@ -1106,18 +554,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | ledger_id | LedgerSync::Type::ID |
 
 
-<a name="operations080807" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::subsidiary" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Subsidiary
-
-<a name="attributes080808" />
+## LedgerSync::QuickBooksOnline::Subsidiary
 
 ### Attributes
 
@@ -1129,18 +567,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | state | LedgerSync::Type::String |
 
 
-<a name="operations080808" />
 
-### Operations
-
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::transfer" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Transfer
-
-<a name="attributes08080801" />
+## LedgerSync::QuickBooksOnline::Transfer
 
 ### Attributes
 
@@ -1156,48 +584,8 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | currency | LedgerSync::Type::ReferenceOne |
 
 
-<a name="operations08080801" />
 
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::transfer::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Transfer::Operations::Find
-
-<a name="resourceValidations0808080802" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::transfer::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Transfer::Operations::Create
-
-<a name="resourceValidations0808080803" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::transfer::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Transfer::Operations::Update
-
-<a name="resourceValidations0808080804" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-
-
-
-<a name="ledgersync::ledgers::quickbooksonline::vendor" />
-
-## LedgerSync::Ledgers::QuickBooksOnline::Vendor
-
-<a name="attributes08080802" />
+## LedgerSync::QuickBooksOnline::Vendor
 
 ### Attributes
 
@@ -1212,39 +600,3 @@ While LedgerSync tries to catch and translate errors, not all errors will be cau
 | last_name | LedgerSync::Type::String |
 | phone_number | LedgerSync::Type::String |
 | subsidiary | LedgerSync::Type::ReferenceOne |
-
-
-<a name="operations08080802" />
-
-### Operations
-
-<a name="ledgersync::ledgers::quickbooksonline::vendor::operations::create" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Vendor::Operations::Create
-
-<a name="resourceValidations0808080805" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::vendor::operations::update" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Vendor::Operations::Update
-
-<a name="resourceValidations0808080806" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-<a name="ledgersync::ledgers::quickbooksonline::vendor::operations::find" />
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Vendor::Operations::Find
-
-<a name="resourceValidations0808080807" />
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
