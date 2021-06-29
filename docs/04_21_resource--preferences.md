@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Preferences
+## LedgerSync::QuickBooksOnline::Preferences
 
 ### Attributes
 
@@ -16,13 +16,3 @@
 | currency | LedgerSync::Type::Hash |
 | report | LedgerSync::Type::Hash |
 | other | LedgerSync::Type::Hash |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Preferences::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

@@ -1,4 +1,4 @@
-### LedgerSync::Ledgers::QuickBooksOnline::PrimaryPhone
+### LedgerSync::QuickBooksOnline::PrimaryPhone
 
 ### Attributes
 
@@ -7,7 +7,3 @@
 | external_id | LedgerSync::Type::ID |
 | ledger_id | LedgerSync::Type::ID |
 | FreeFormNumber | LedgerSync::Type::String |
-
-
-### Operations
-

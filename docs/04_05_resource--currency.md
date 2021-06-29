@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Currency
+## LedgerSync::QuickBooksOnline::Currency
 
 ### Attributes
 
@@ -9,7 +9,3 @@
 | exchange_rate | LedgerSync::Type::Float |
 | name | LedgerSync::Type::String |
 | symbol | LedgerSync::Type::String |
-
-
-### Operations
-

@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Resource
+## LedgerSync::QuickBooksOnline::Resource
 
 ### Attributes
 
@@ -6,7 +6,3 @@
 | ---- | ---- |
 | external_id | LedgerSync::Type::ID |
 | ledger_id | LedgerSync::Type::ID |
-
-
-### Operations
-

@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Transfer
+## LedgerSync::QuickBooksOnline::Transfer
 
 ### Attributes
 
@@ -12,25 +12,3 @@
 | from_account | LedgerSync::Type::ReferenceOne |
 | to_account | LedgerSync::Type::ReferenceOne |
 | currency | LedgerSync::Type::ReferenceOne |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Transfer::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Transfer::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Transfer::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

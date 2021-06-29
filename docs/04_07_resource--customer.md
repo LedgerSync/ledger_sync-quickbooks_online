@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Customer
+## LedgerSync::QuickBooksOnline::Customer
 
 ### Attributes
 
@@ -10,25 +10,3 @@
 | PrimaryPhone | LedgerSync::Type::ReferenceOne |
 | PrimaryEmailAddr | LedgerSync::Type::ReferenceOne |
 | subsidiary | LedgerSync::Type::ReferenceOne |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Customer::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Customer::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Customer::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

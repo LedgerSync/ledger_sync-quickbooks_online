@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::BillPaymentLineItem
+## LedgerSync::QuickBooksOnline::BillPaymentLineItem
 
 ### Attributes
 
@@ -8,7 +8,3 @@
 | ledger_id | LedgerSync::Type::ID |
 | amount | LedgerSync::Type::Integer |
 | ledger_transactions | LedgerSync::Type::ReferenceMany |
-
-
-### Operations
-

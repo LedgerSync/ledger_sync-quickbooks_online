@@ -1,4 +1,4 @@
-### LedgerSync::Ledgers::QuickBooksOnline::PrimaryEmailAddr
+### LedgerSync::QuickBooksOnline::PrimaryEmailAddr
 
 ### Attributes
 
@@ -7,7 +7,3 @@
 | external_id | LedgerSync::Type::ID |
 | ledger_id | LedgerSync::Type::ID |
 | Address | LedgerSync::Type::String |
-
-
-### Operations
-

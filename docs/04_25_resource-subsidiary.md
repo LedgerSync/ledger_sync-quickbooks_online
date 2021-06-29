@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Subsidiary
+## LedgerSync::QuickBooksOnline::Subsidiary
 
 ### Attributes
 
@@ -8,7 +8,3 @@
 | ledger_id | LedgerSync::Type::ID |
 | name | LedgerSync::Type::String |
 | state | LedgerSync::Type::String |
-
-
-### Operations
-

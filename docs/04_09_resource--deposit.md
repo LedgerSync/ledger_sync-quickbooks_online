@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Deposit
+## LedgerSync::QuickBooksOnline::Deposit
 
 ### Attributes
 
@@ -13,25 +13,3 @@
 | department | LedgerSync::Type::ReferenceOne |
 | currency | LedgerSync::Type::ReferenceOne |
 | line_items | LedgerSync::Type::ReferenceMany |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Deposit::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Deposit::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Deposit::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

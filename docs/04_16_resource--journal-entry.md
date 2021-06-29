@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::JournalEntry
+## LedgerSync::QuickBooksOnline::JournalEntry
 
 ### Attributes
 
@@ -11,25 +11,3 @@
 | reference_number | LedgerSync::Type::String |
 | currency | LedgerSync::Type::ReferenceOne |
 | line_items | LedgerSync::Type::ReferenceMany |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::JournalEntry::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::JournalEntry::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::JournalEntry::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

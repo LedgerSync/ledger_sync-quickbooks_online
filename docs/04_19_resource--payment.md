@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Payment
+## LedgerSync::QuickBooksOnline::Payment
 
 ### Attributes
 
@@ -16,25 +16,3 @@
 | account | LedgerSync::Type::ReferenceOne |
 | currency | LedgerSync::Type::ReferenceOne |
 | line_items | LedgerSync::Type::ReferenceMany |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Payment::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Payment::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Payment::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

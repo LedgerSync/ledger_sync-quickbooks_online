@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Invoice
+## LedgerSync::QuickBooksOnline::Invoice
 
 ### Attributes
 
@@ -13,25 +13,3 @@
 | account | LedgerSync::Type::ReferenceOne |
 | currency | LedgerSync::Type::ReferenceOne |
 | line_items | LedgerSync::Type::ReferenceMany |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Invoice::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Invoice::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Invoice::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

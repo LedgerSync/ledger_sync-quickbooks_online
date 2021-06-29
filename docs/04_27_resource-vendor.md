@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Vendor
+## LedgerSync::QuickBooksOnline::Vendor
 
 ### Attributes
 
@@ -13,25 +13,3 @@
 | last_name | LedgerSync::Type::String |
 | phone_number | LedgerSync::Type::String |
 | subsidiary | LedgerSync::Type::ReferenceOne |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Vendor::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Vendor::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Vendor::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

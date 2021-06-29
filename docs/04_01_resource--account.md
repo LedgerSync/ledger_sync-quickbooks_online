@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Account
+## LedgerSync::QuickBooksOnline::Account
 
 ### Attributes
 
@@ -15,24 +15,3 @@
 | active | LedgerSync::Type::Boolean |
 | currency | LedgerSync::Type::ReferenceOne |
 
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Account::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Account::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Account::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

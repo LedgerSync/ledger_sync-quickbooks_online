@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::LedgerClass
+## LedgerSync::QuickBooksOnline::LedgerClass
 
 ### Attributes
 
@@ -11,25 +11,3 @@
 | active | LedgerSync::Type::Boolean |
 | sub_class | LedgerSync::Type::Boolean |
 | parent | LedgerSync::Type::ReferenceOne |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::LedgerClass::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::LedgerClass::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::LedgerClass::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

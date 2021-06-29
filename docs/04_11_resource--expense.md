@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::Expense
+## LedgerSync::QuickBooksOnline::Expense
 
 ### Attributes
 
@@ -16,25 +16,3 @@
 | department | LedgerSync::Type::ReferenceOne |
 | currency | LedgerSync::Type::ReferenceOne |
 | line_items | LedgerSync::Type::ReferenceMany |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Expense::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Expense::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Expense::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

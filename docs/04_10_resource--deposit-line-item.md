@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::DepositLineItem
+## LedgerSync::QuickBooksOnline::DepositLineItem
 
 ### Attributes
 
@@ -11,7 +11,3 @@
 | amount | LedgerSync::Type::Integer |
 | description | LedgerSync::Type::String |
 | entity | LedgerSync::Type::ReferenceOne |
-
-
-### Operations
-

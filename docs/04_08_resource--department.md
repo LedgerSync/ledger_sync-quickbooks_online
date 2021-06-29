@@ -1,4 +1,4 @@
-### LedgerSync::Ledgers::QuickBooksOnline::Department
+### LedgerSync::QuickBooksOnline::Department
 
 ### Attributes
 
@@ -11,25 +11,3 @@
 | active | LedgerSync::Type::Boolean |
 | sub_department | LedgerSync::Type::Boolean |
 | parent | LedgerSync::Type::ReferenceOne |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::Department::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Department::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::Department::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

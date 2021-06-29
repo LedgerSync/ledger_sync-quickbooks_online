@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::BillPayment
+## LedgerSync::QuickBooksOnline::BillPayment
 
 ### Attributes
 
@@ -19,25 +19,3 @@
 | bank_account | LedgerSync::Type::ReferenceOne |
 | credit_card_account | LedgerSync::Type::ReferenceOne |
 | line_items | LedgerSync::Type::ReferenceMany |
-
-
-### Operations
-
-#### LedgerSync::Ledgers::QuickBooksOnline::BillPayment::Operations::Find
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::BillPayment::Operations::Create
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |
-#### LedgerSync::Ledgers::QuickBooksOnline::BillPayment::Operations::Update
-
-##### Resource Validations
-
-| Name | Type |
-| ---- | ---- |

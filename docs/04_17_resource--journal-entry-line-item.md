@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::JournalEntryLineItem
+## LedgerSync::QuickBooksOnline::JournalEntryLineItem
 
 ### Attributes
 
@@ -12,7 +12,3 @@
 | amount | LedgerSync::Type::Integer |
 | description | LedgerSync::Type::String |
 | entry_type | LedgerSync::Type::StringFromSet |
-
-
-### Operations
-

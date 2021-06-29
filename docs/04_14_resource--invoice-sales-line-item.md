@@ -1,4 +1,4 @@
-## LedgerSync::Ledgers::QuickBooksOnline::InvoiceSalesLineItem
+## LedgerSync::QuickBooksOnline::InvoiceSalesLineItem
 
 ### Attributes
 
@@ -10,7 +10,3 @@
 | ledger_class | LedgerSync::Type::ReferenceOne |
 | amount | LedgerSync::Type::Integer |
 | description | LedgerSync::Type::String |
-
-
-### Operations
-

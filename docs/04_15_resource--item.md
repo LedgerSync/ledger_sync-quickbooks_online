@@ -1,4 +1,4 @@
-### LedgerSync::Ledgers::QuickBooksOnline::Item
+### LedgerSync::QuickBooksOnline::Item
 
 ### Attributes
 
@@ -7,7 +7,3 @@
 | external_id | LedgerSync::Type::ID |
 | ledger_id | LedgerSync::Type::ID |
 | name | LedgerSync::Type::String |
-
-
-### Operations
-
