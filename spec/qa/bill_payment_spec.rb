@@ -18,7 +18,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::BillPayment, qa: true, client: :qui
         AcctNum: rand(10_000).to_s,
         AccountType: 'bank',
         Classification: 'asset',
-        AccountSubType: 'cash_on_hand'
+        AccountSubType: 'CashOnHand'
       )
     )
   end

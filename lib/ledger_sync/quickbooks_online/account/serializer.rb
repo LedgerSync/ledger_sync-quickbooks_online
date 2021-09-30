@@ -10,13 +10,12 @@ module LedgerSync
 
         attribute :Name
         attribute :AcctNum
+        attribute :AccountSubType
         attribute :Description
         attribute :Active
 
         mapping :AccountType,
                 hash: Account::TYPES
-        mapping :AccountSubType,
-                hash: Account::SUB_TYPES
         mapping :Classification,
                 hash: Account::CLASSIFICATIONS
 
