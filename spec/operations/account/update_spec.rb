@@ -16,7 +16,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::Account::Operations::Update do
       Name: 'Sample Account',
       Classification: 'asset',
       AccountType: 'bank',
-      AccountSubType: 'cash_on_hand',
+      AccountSubType: 'CashOnHand',
       Currency: build(
         :quickbooks_online_currency,
         Name: 'United States Dollar',
