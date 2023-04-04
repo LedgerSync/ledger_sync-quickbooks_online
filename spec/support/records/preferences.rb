@@ -49,25 +49,26 @@ module Test
             'EmailMessagesPrefs' => {
               'InvoiceMessage' => {
                 'Subject' => "Invoice from Craig's Design and Landscaping Services",
-                'Message' => "Your invoice is attached.  Please remit payment at your earliest convenience.\nThank"\
-                             "you for your business - we appreciate it very much.\n\nSincerely,\nCraig's Design and "\
+                'Message' => "Your invoice is attached.  Please remit payment at your earliest convenience.\nThank" \
+                             "you for your business - we appreciate it very much.\n\nSincerely,\nCraig's Design and " \
                              'Landscaping Services'
               },
               'EstimateMessage' => {
                 'Subject' => "Estimate from Craig's Design and Landscaping Services",
-                'Message' => "Please review the estimate below.  Feel free to contact us if you have any questions.\n"\
-                "We look forward to working with you.\n\nSincerely,\nCraig's Design and Landscaping Services"
+                'Message' => "Please review the estimate below.  Feel free to contact us if you have any questions.\n" \
+                             "We look forward to working with you.\n\nSincerely,\nCraig's Design and Landscaping " \
+                             'Services'
               },
               'SalesReceiptMessage' => {
                 'Subject' => "Sales Receipt from Craig's Design and Landscaping Services",
-                'Message' => "Your sales receipt is attached.\nThank you for your business - we appreciate it very"\
-                "mutch.\n\nSincerely,\nCraig's Design and Landscaping Services"
+                'Message' => "Your sales receipt is attached.\nThank you for your business - we appreciate it very" \
+                             "mutch.\n\nSincerely,\nCraig's Design and Landscaping Services"
               },
               'StatementMessage' => {
                 'Subject' => "Statement from Craig's Design and Landscaping Services",
-                'Message' => "Your statement is attached.  Please remit payment at your earliest convenience.\nThank "\
-                "you for your business - we appreciate it very much.\n\nSincerely,\nCraig's Design and Landscaping"\
-                'Services'
+                'Message' => "Your statement is attached.  Please remit payment at your earliest convenience.\nThank " \
+                             "you for your business - we appreciate it very much.\n\nSincerely,\nCraig's Design and " \
+                             'Landscaping Services'
               }
             },
             'VendorAndPurchasesPrefs' => {

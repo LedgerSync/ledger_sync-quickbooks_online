@@ -93,7 +93,7 @@ module LedgerSync
         ledger_resource_type = self.class.ledger_resource_type_for(
           resource_class: resource_class
         ).classify
-        full_query = "SELECT * FROM #{ledger_resource_type} WHERE #{query} STARTPOSITION #{offset} MAXRESULTS "\
+        full_query = "SELECT * FROM #{ledger_resource_type} WHERE #{query} STARTPOSITION #{offset} MAXRESULTS " \
                      "#{limit}"
         url = "#{oauth_base_uri}/query?query=#{CGI.escape(full_query)}"
 
