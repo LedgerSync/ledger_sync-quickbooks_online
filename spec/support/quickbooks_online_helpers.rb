@@ -170,8 +170,6 @@ module QuickBooksOnlineHelpers # rubocop:disable Metrics/ModuleLength
     stub_request(:post, 'https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer')
       .with(
         body: {
-          'client_id' => 'client_id',
-          'client_secret' => 'client_secret',
           'grant_type' => 'refresh_token',
           'refresh_token' => 'refresh_token'
         },
