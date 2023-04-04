@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../reference/deserializer'
+
 module LedgerSync
   module QuickBooksOnline
     class Department
