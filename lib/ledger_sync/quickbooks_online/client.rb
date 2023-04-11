@@ -59,8 +59,8 @@ module LedgerSync
         super()
       end
 
-      def authorization_url(redirect_uri:)
-        oauth_client.authorization_url(redirect_uri: redirect_uri)
+      def authorization_url(redirect_uri:, state: SecureRandom.hex(12))
+        oauth_client.authorization_url(redirect_uri: redirect_uri, state: state)
       end
 
       def find(path:)
