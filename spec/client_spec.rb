@@ -137,19 +137,26 @@ RSpec.describe LedgerSync::QuickBooksOnline::Client do
 
   describe '.new_from_oauth_client_uri', vcr: true do
     it do
+      oauth_client_uri =
+        'http://localhost:3000/?code=THIS_IS_THE_OAUTH_CODE&state=1f14489339926f9ac94cb860&realmId=1234567890'
+      redirect_uri = 'http://localhost:3000/accounting/'
       oauth_client = LedgerSync::QuickBooksOnline::OAuthClient.new(
         client_id: 'client_id',
         client_secret: 'client_secret'
       )
       client = described_class.new_from_oauth_client_uri(
         oauth_client: oauth_client,
-        uri: 'http://localhost:3000/?code=THIS_IS_THE_OAUTH_CODE&state=1f14489339926f9ac94cb860&realmId=1234567890'
+        uri: oauth_client_uri
       )
 
       expect(client.access_token).to be_present
       expect(client.client_id).to eq(oauth_client.client_id)
       expect(client.realm_id).to be_present
       expect(client.refresh_token).to be_present
+
+      state_token = SecureRandom.hex(12)
+      authorization_url = oauth_client.authorization_url(redirect_uri: redirect_uri, state: state_token)
+      expect(authorization_url).to include("state=#{state_token}")
     end
   end
 end
