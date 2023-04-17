@@ -50,11 +50,11 @@ module LedgerSync
         @client_secret = client_secret
       end
 
-      def authorization_url(redirect_uri:)
+      def authorization_url(redirect_uri:, state: SecureRandom.hex(12))
         client.auth_code.authorize_url(
           redirect_uri: redirect_uri,
           response_type: 'code',
-          state: SecureRandom.hex(12),
+          state: state,
           scope: 'com.intuit.quickbooks.accounting'
         )
       end
