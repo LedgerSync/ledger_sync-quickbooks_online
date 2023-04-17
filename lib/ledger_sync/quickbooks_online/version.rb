@@ -3,7 +3,7 @@
 # :nocov:
 module LedgerSync
   module QuickBooksOnline
-    VERSION = '0.4.1'
+    VERSION = '1.0.0'
 
     def self.version(args = {})
       pre = args.fetch(:pre, false)
@@ -11,7 +11,7 @@ module LedgerSync
       if !pre && (!ENV['TRAVIS'] || ENV.fetch('TRAVIS_TAG', '') != '')
         VERSION
       else
-        "#{VERSION}.pre.#{ENV['TRAVIS_BUILD_NUMBER']}"
+        "#{VERSION}.pre.#{ENV.fetch('TRAVIS_BUILD_NUMBER', nil)}"
       end
     end
   end

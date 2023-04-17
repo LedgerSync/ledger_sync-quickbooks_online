@@ -5,9 +5,12 @@ module LedgerSync
     module Serialization
       module Type
         class SerializeTransactionReferenceType < LedgerSync::Type::Value
-          def cast_value(value:)
+          def cast_value(args = {})
+            value = args.fetch(:value)
             return if value.nil?
+
             raise "List expected.  Given: #{value.class.name}" unless value.is_a?(Array)
+
             unless value.all?(LedgerSync::Resource)
               raise "Resources expected.  Given: #{value.map { |i| i.class.name }.join(', ')}"
             end

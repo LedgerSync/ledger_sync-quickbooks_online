@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'department'
-
 module LedgerSync
   module QuickBooksOnline
     class Department < QuickBooksOnline::Resource

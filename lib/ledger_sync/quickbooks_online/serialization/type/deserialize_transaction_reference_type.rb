@@ -5,7 +5,8 @@ module LedgerSync
     module Serialization
       module Type
         class DeserializeTransactionReferenceType < LedgerSync::Type::Value
-          def cast_value(value:)
+          def cast_value(args = {})
+            value = args.fetch(:value)
             return if value.nil?
 
             raise "Unknown value type.  Array expected.  Given: #{value.class.name}" unless value.is_a?(Array)
