@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ledger_sync-quickbooks_online (0.4.1)
+    ledger_sync-quickbooks_online (1.0.0)
       dotenv
       ledger_sync (>= 2.0.2)
       oauth2
@@ -48,12 +48,12 @@ GEM
       concurrent-ruby (~> 1.0)
       dry-core (~> 1.0, < 2)
       zeitwerk (~> 2.6)
-    dry-schema (1.13.0)
+    dry-schema (1.13.1)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 1.0, >= 1.0.1)
       dry-core (~> 1.0, < 2)
       dry-initializer (~> 3.0)
-      dry-logic (>= 1.5, < 2)
+      dry-logic (>= 1.4, < 2)
       dry-types (>= 1.7, < 2)
       zeitwerk (~> 2.6)
     dry-types (1.7.1)
@@ -127,7 +127,7 @@ GEM
     minitest (5.18.0)
     multi_xml (0.6.0)
     multipart-post (2.3.0)
-    nokogiri (1.14.2)
+    nokogiri (1.14.3)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     oauth2 (2.0.9)
