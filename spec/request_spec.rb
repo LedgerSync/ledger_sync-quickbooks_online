@@ -19,7 +19,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::Request do
   end
   let(:oauth_error) do
     OAuth2::Error.new(
-      OpenStruct.new
+      OpenStruct.new # rubocop:disable Style/OpenStructUse
     )
   end
   let(:auth_error) do
@@ -93,7 +93,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::Request do
           m.call(*args)
         else
           @after_first_pass = true
-          raise OAuth2::Error, OpenStruct.new
+          raise OAuth2::Error, OpenStruct.new # rubocop:disable Style/OpenStructUse
         end
       end
       allow(request).to receive(:parse_error).once.and_return(
@@ -107,7 +107,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::Request do
 
     it 'refreshes and parses error' do
       allow(request).to receive(:oauth).and_wrap_original do |_m, *_args|
-        raise OAuth2::Error, OpenStruct.new
+        raise OAuth2::Error, OpenStruct.new # rubocop:disable Style/OpenStructUse
       end
       allow(request).to receive(:parse_error).twice.and_return(
         auth_error

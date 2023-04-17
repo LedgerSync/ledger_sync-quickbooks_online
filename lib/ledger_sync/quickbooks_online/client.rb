@@ -28,26 +28,16 @@ module LedgerSync
                   :test,
                   :update_dotenv
 
-      def initialize(
-        access_token:,
-        client_id:,
-        client_secret:,
-        realm_id:,
-        refresh_token:,
-        expires_at: nil,
-        refresh_token_expires_at: nil,
-        test: false,
-        update_dotenv: true
-      )
-        @access_token = access_token
-        @client_id = client_id
-        @client_secret = client_secret
-        @realm_id = realm_id
-        @refresh_token = refresh_token
-        @expires_at = expires_at
-        @refresh_token_expires_at = refresh_token_expires_at
-        @test = test
-        @update_dotenv = update_dotenv
+      def initialize(args = {})
+        @access_token = args.fetch(:access_token)
+        @client_id = args.fetch(:client_id)
+        @client_secret = args.fetch(:client_secret)
+        @realm_id = args.fetch(:realm_id)
+        @refresh_token = args.fetch(:refresh_token)
+        @expires_at = args.fetch(:expires_at, nil)
+        @refresh_token_expires_at = args.fetch(:refresh_token_expires_at, nil)
+        @test = args.fetch(:test, false)
+        @update_dotenv = args.fetch(:update_dotenv, true)
 
         @previous_access_tokens = []
         @previous_refresh_tokens = []
@@ -103,7 +93,7 @@ module LedgerSync
         ledger_resource_type = self.class.ledger_resource_type_for(
           resource_class: resource_class
         ).classify
-        full_query = "SELECT * FROM #{ledger_resource_type} WHERE #{query} STARTPOSITION #{offset} MAXRESULTS "\
+        full_query = "SELECT * FROM #{ledger_resource_type} WHERE #{query} STARTPOSITION #{offset} MAXRESULTS " \
                      "#{limit}"
         url = "#{oauth_base_uri}/query?query=#{CGI.escape(full_query)}"
 

@@ -11,7 +11,7 @@ module LedgerSync
       if !pre && (!ENV['TRAVIS'] || ENV.fetch('TRAVIS_TAG', '') != '')
         VERSION
       else
-        "#{VERSION}.pre.#{ENV['TRAVIS_BUILD_NUMBER']}"
+        "#{VERSION}.pre.#{ENV.fetch('TRAVIS_BUILD_NUMBER', nil)}"
       end
     end
   end
