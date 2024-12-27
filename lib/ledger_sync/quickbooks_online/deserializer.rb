@@ -36,7 +36,7 @@ module LedgerSync
         resource        = args.fetch(:resource)
         merged_resource = resource.dup
 
-        self.class.attributes.each do |_key, deserializer_attribute|
+        self.class.attributes.each_value do |deserializer_attribute|
           next unless deserializer_attribute.references_many?
 
           resources_from_ledger = attribute_value_from_ledger(
@@ -45,7 +45,7 @@ module LedgerSync
             resource: merged_resource
           )
 
-          resource_hash_from_ledger = resources_from_ledger.map { |e| [e.ledger_id, e] }.to_h
+          resource_hash_from_ledger = resources_from_ledger.to_h { |e| [e.ledger_id, e] }
 
           # Using original resource since it is overwritten by keyword arg
           merged_value = resource.send(deserializer_attribute.resource_attribute_dot_parts.first).map do |referenced|

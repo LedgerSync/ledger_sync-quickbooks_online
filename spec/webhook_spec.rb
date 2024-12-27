@@ -23,7 +23,7 @@ RSpec.describe LedgerSync::QuickBooksOnline::Webhook do
         signature: 'test_signature',
         verification_token: 'test_verification_token'
       }
-      expect(described_class).to receive(:valid?).with(**args.merge(payload: payload.to_json))
+      expect(described_class).to receive(:valid?).with(**args, payload: payload.to_json)
       instance.valid?(**args)
     end
   end

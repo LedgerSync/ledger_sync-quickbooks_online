@@ -3,7 +3,7 @@ PATH
   specs:
     ledger_sync-quickbooks_online (1.0.1)
       dotenv
-      ledger_sync (>= 2.0.2, <= 3.0)
+      ledger_sync (>= 3.0, <= 4.0)
       oauth2
 
 GEM
@@ -107,7 +107,7 @@ GEM
     ipaddr (1.2.5)
     json (2.6.3)
     jwt (2.7.0)
-    ledger_sync (2.5.0)
+    ledger_sync (3.0.0)
       activemodel
       dotenv
       dry-schema
@@ -117,7 +117,7 @@ GEM
       faraday_middleware
       fingerprintable (>= 1.2.1)
       nokogiri
-      openssl (~> 2.2.0)
+      openssl (> 2.2.0)
       pd_ruby
       rack (>= 2.2.3)
       rainbow (~> 3.0)

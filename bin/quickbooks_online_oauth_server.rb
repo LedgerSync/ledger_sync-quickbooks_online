@@ -54,7 +54,7 @@ while (session = server.accept) # rubocop:disable Lint/UnreachableLoop
   # 2
   _path, query = full_path.split('?')
 
-  params = query.split('&').map { |e| e.split('=') }.to_h if query.present?
+  params = query.split('&').to_h { |e| e.split('=') } if query.present?
 
   client.set_credentials_from_oauth_code(
     code: params.fetch('code'),

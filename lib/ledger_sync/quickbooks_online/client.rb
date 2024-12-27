@@ -206,15 +206,15 @@ module LedgerSync
         ).perform
       end
 
-      def set_credentials_from_oauth_token(token:, realm_id: nil) # rubocop:disable Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+      def set_credentials_from_oauth_token(token:, realm_id: nil)
         @previous_access_tokens << access_token if access_token.present?
         @access_token = token.token
 
-        @expires_at = Time&.at(token.expires_at.to_i)&.to_datetime
+        @expires_at = Time.at(token.expires_at.to_i).to_datetime
         unless token.params['x_refresh_token_expires_in'].nil?
-          @refresh_token_expires_at = Time&.at(
+          @refresh_token_expires_at = Time.at(
             Time.now.to_i + token.params['x_refresh_token_expires_in']
-          )&.to_datetime
+          ).to_datetime
         end
 
         @previous_refresh_tokens << refresh_token if refresh_token.present?
