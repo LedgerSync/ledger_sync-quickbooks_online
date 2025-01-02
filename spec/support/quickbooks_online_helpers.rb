@@ -110,17 +110,17 @@ module QuickBooksOnlineHelpers # rubocop:disable Metrics/ModuleLength
 
     define_method(stub_create_method) do |request_body: nil, response_body: nil|
       stub_create(
-        request_body: (request_body || send(request_body_hash)),
-        response_body: (response_body || send(response_body_hash)),
+        request_body: request_body || send(request_body_hash),
+        response_body: response_body || send(response_body_hash),
         url: api_url(record: record)
       )
     end
 
     define_method(stub_find_method) do |ledger_id: nil, response_body: nil|
       stub_find(
-        response_body: (response_body || send(response_body_hash)),
+        response_body: response_body || send(response_body_hash),
         url: api_url(
-          ledger_id: (ledger_id || record.try(:ledger_id)),
+          ledger_id: ledger_id || record.try(:ledger_id),
           record: record
         )
       )
@@ -132,20 +132,19 @@ module QuickBooksOnlineHelpers # rubocop:disable Metrics/ModuleLength
 
     define_method(stub_update_method) do |request_body: nil, response_body: nil|
       stub_update(
-        request_body: (
+        request_body:
           request_body ||
           record.try(:update_request_hash) ||
-          record.try(:response_hash) # This defaults to response body because FullUpdates are required
-        ),
-        response_body: (response_body || send(response_body_hash)),
+          record.try(:response_hash), # This defaults to response body because FullUpdates are required
+        response_body: response_body || send(response_body_hash),
         url: api_url(record: record)
       )
     end
 
     define_method(stub_search_method) do |response_body: nil, url: nil|
       stub_search(
-        response_body: (response_body || send(search_response_body_hash)),
-        url: (url || record.try(:search_url))
+        response_body: response_body || send(search_response_body_hash),
+        url: url || record.try(:search_url)
       )
     end
   end
