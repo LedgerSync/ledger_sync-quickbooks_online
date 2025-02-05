@@ -27,13 +27,13 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency('awesome_print', '>= 0')
-  spec.add_development_dependency('bump', '~> 0.9.0')
+  spec.add_development_dependency('bump', '~> 0.10.0')
   spec.add_development_dependency('bundler', '~> 2.1')
   spec.add_development_dependency('byebug', '>= 0')
   spec.add_development_dependency('climate_control', '>= 0')
   spec.add_development_dependency('coveralls_reborn', '>= 0')
   spec.add_development_dependency('factory_bot', '~> 6.5.1')
-  spec.add_development_dependency('overcommit', '~> 0.57.0')
+  spec.add_development_dependency('overcommit', '~> 0.66.0')
   spec.add_development_dependency('rake', '~> 13.0')
   spec.add_development_dependency('rspec', '~> 3.2')
   spec.add_development_dependency('rubocop', '>= 0')
