@@ -4,6 +4,9 @@ on:
   pull_request:
   release:
     types: [created]
+  schedule:
+    - cron: "0 0 */14 * *"
+
 jobs:
   rubocop:
     strategy:
@@ -54,6 +57,23 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel: true
           flag-name: run-${{ matrix.ruby-version }}
+  create_release:
+    if: github.event_name == 'schedule' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+            tag_name: "v${{ github.run_number }}-${{ github.sha }}"
+            release_name: "Release ${{ github.run_number }} - ${{ github.sha }}"
+            body: "Automatic release based on workflow"
+            draft: false
+            prerelease: false
   publish:
     runs-on: ubuntu-latest
     needs: ["rubocop", "rspec"]
